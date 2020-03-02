@@ -1,3 +1,4 @@
+<html>
 <div id="container">
   <div>
     <p>Can I have your number?</p>
@@ -18,7 +19,9 @@
   <p>Please don't be discouraged, I'm sure you'll find your number in a few days. I'm patient ;)</p>
 </h3>
 
-#container {
+<style> 
+
+  #container {
   margin: 10px; 
   border: 8px solid #000000; 
   background-color: #000000; 
@@ -41,7 +44,8 @@ button {
 h3 {
   font-family: Gill sans;
   font-size: 9px;
-}
+}</style>
+<script> 
 
 var upper = "9999999999"; 
 var lower = "0000000000"; 
@@ -87,3 +91,4 @@ function bigger() {
   lower = current + 1; 
   updateDisplay(); 
 }
+</script>
