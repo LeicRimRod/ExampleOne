@@ -46,25 +46,23 @@ h3 {
   font-size: 9px;
 }</style>
 <script> 
+var upper = 9999999999; 
+var lower = 0000000000; 
+var current = 0000000000; 
 
-var upper = "9999999999"; 
-var lower = "0000000000"; 
-
-var current = "5555555555"; 
-
-document.getElementById(document).ready(function() {
+// document.getElementById(document).ready(function() {
   
-  document.getElementById('#smaller').click(smaller);
-  document.getElementById('#bigger').click(bigger);
+  document.getElementById('smaller').addEventListener("click", function(){ smaller() });
+  document.getElementById('bigger').addEventListener("click", function(){ bigger() });
   
-  document.getElementById('#submit').click(submit);
+  // document.getElementById('submit').addEventListener("click", submit());
   
-}); 
+// }); 
 
 function submit() {
   alert("You submitted: " + numberToString(current)); 
 }
-
+ 
 function numberToString(p) {
   var sp = "" + p; 
   var acc = ""; 
@@ -78,17 +76,24 @@ function numberToString(p) {
 }
 
 function updateDisplay() {
-  current = Math.floor((upper + lower) / 2); 
-  $("#phone-number").html(numberToString(current)); 
+  // current = Math.floor((upper + lower) / 2); 
+  document.getElementById("phone-number").innerHTML = numberToString(current); 
 }
 
 function smaller() {
-  upper = current - 1; 
+  if (current > lower){
+  current = current - 1; 
+  } 
   updateDisplay(); 
+
 }
 
 function bigger() {
-  lower = current + 1; 
+  if (current < upper){
+    current = current + 1; 
+
+  }
   updateDisplay(); 
 }
+
 </script>
